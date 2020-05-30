@@ -7,18 +7,18 @@ class Main {
   // gets and validates a user's input as an int
   public static int getValidNumber() {
     Scanner textScanner = new Scanner(System.in);
-    System.out.print("Enter a number: ");
-    String input = textScanner.nextLine();
     while (true){
+      System.out.print("Enter a number: ");
+      String input = textScanner.nextLine();
       if (input.matches("-?\\d+")) {
         // input is composed of only digits, so it is safe to parse
         int number = Integer.parseInt(input);
         System.out.println("You entered a number " + number);
         return number;
-      }
-
+      } else {
       //prompts for invalid data, requests input//
       System.out.println("Sorry, couldn't understand you!");
+      }
     }
   }
 
