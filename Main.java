@@ -31,7 +31,7 @@ class Main {
     int sum = 0;
     ArrayList<Integer> numberOneList = new ArrayList<Integer>();
     ArrayList<Integer> numberTwoList = new ArrayList<Integer>();
-    //calls method for each number//
+    //calls method for each number, sets it to variable, sets second variable for calculating//
     numberOne = getValidNumber();
     numberOneCalc = numberOne;
     numberTwo = getValidNumber();
@@ -58,6 +58,7 @@ class Main {
     count++; 
   }
 
+//explains next steps//
   System.out.println("First, we half our first number " +numberOne);
   System.out.println("And if we get a fraction, we get rid of those, we round down. For example, 11 divided by 2 is 5.5, but we would keep 5.");
   System.out.println("So, we get: ");
@@ -98,6 +99,7 @@ class Main {
     }
   }
 
+//shows resulting columns of numbers side by side//
   System.out.println("We now have the following columns:");
 
   for (int i = 0; i < numberTwoList.size(); i++) {
