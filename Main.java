@@ -31,69 +31,89 @@ class Main {
     int sum = 0;
     ArrayList<Integer> numberOneList = new ArrayList<Integer>();
     ArrayList<Integer> numberTwoList = new ArrayList<Integer>();
-    
+    //calls method for each number//
     numberOne = getValidNumber();
     numberOneCalc = numberOne;
     numberTwo = getValidNumber();
     numberTwoCalc = numberTwo;
     
+    //explains Russian math to user//
     System.out.println(
       "You are multiplying "  +numberOne + " and " +numberTwo + "\n"
       + "In 'Russian Math' you take your two numbers " +numberOne + " and " + numberTwo + "\n"
       + "And you half and double your numbers...\n"
       + "So, you half " +numberOne + " and you'll double " + numberTwo
     );
+
+   //adds numbers to arraylist// 
   numberOneList.add(numberOne);
   numberTwoList.add(numberTwo);
-  while(numberOneCalc > 1){
+
+  //halves first number until we reach one, doubles second number the same number of times, counts number of times it is halved/doubled //
+  while (numberOneCalc > 1) {
     numberOneCalc = numberOneCalc/2;
     numberOneList.add(numberOneCalc);
     numberTwoCalc = numberTwoCalc*2;
     numberTwoList.add(numberTwoCalc);
     count++; 
   }
-  "First, we half our first number " +numberOne);
+
+  System.out.println("First, we half our first number " +numberOne);
   System.out.println("And if we get a fraction, we get rid of those, we round down. For example, 11 divided by 2 is 5.5, but we would keep 5.");
   System.out.println("So, we get: ");
+
+  //lists numbers in second arraylist/column //
   for (int i = 0; i < numberOneList.size(); i++) {
-            System.out.println("and " +numberOneList.get(i));
-        } 
+    System.out.println("and " +numberOneList.get(i));
+  } 
   System.out.println("And we double our second number as many times as needed to half our first number, in this case: " +count);
-  for (int i = 0; i < numberTwoList.size(System.out.println(); i++) {
-            System.out.println("and " +numberTwoList.get(i));
-        } 
+
+  //lists numbers in second arraylist/column //
+  for (int i = 0; i < numberTwoList.size(); i++) {
+    System.out.println("and we get" +numberTwoList.get(i));
+  } 
   System.out.println(" ");
   System.out.println("We now have: " +numberOneList);
   System.out.println("and we have: " +numberTwoList);
   System.out.println(" ");
   System.out.println("We put them into columns, the first number and it's halves on the left and the second number and it's doubles on the right.");
+ 
+
+ //lists the numbers in columns to more easily show the matching numbers//
   for (int i = 0; i < numberTwoList.size(); i++) {
-  System.out.println(numberOneList.get(i)+ " and " + numberTwoList.get(i));
+    System.out.println(numberOneList.get(i)+ " and " + numberTwoList.get(i));
   }
-  System.out.println("And we remove anything even in the lefthand column");
+  System.out.println("And we remove any even numbers in the lefthand column and the numbers that correspond in the righthand column, too.");
   
- // numberOneList.removeIf(num -> num%2==0);
+ // removes numbers if they are even, and the corresponding item number in the second list//
   int j = 0;
   while (j < numberOneList.size()) {
     int even=numberOneList.get(j)%2;
     if (even==0){
       System.out.println(numberOneList.get(j)+" is an Even Number, so we remove it and "+ numberTwoList.get(j));
       numberOneList.remove(j);
-      numberTwoList.remove(j);}
-      //i = i-1;}
-    else {
+      numberTwoList.remove(j);
+    } else {
       j++;
     }
   }
+
   System.out.println("We now have the following columns:");
+
   for (int i = 0; i < numberTwoList.size(); i++) {
     System.out.println(numberOneList.get(i)+ " and " + numberTwoList.get(i));
   }
+
   System.out.println("We add up the numbers in our righthand column, to get our answer:");
+
+//adds numbers in righthand column
   for (int i = 0;  i < numberTwoList.size(); i++){
     sum += numberTwoList.get(i);
     System.out.println(+numberTwoList.get(i));
   }
+
+
+//gives result.
   System.out.println("equals");
   System.out.println(sum);
   System.out.println("And " +sum + " is the same as " +numberOne +" times " +numberTwo);
