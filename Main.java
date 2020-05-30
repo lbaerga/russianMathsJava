@@ -29,7 +29,6 @@ class Main {
     int numberTwoCalc = 0;
     int count = 0;
     int sum = 0;
-    isNotValid = false;
     ArrayList<Integer> numberOneList = new ArrayList<Integer>();
     ArrayList<Integer> numberTwoList = new ArrayList<Integer>();
     
@@ -38,11 +37,12 @@ class Main {
     numberTwo = getValidNumber();
     numberTwoCalc = numberTwo;
     
-    System.out.println("You are multiplying "  +numberOne + " and " +numberTwo);
-
-  System.out.println("In 'Russian Math' you take your two numbers " +numberOne + " and " + numberTwo);
-  System.out.println("And you half and double your numbers...");
-  System.out.println("So, you half " +numberOne + " and you'll double " + numberTwo);
+    System.out.println(
+      "You are multiplying "  +numberOne + " and " +numberTwo + "\n"
+      + "In 'Russian Math' you take your two numbers " +numberOne + " and " + numberTwo + "\n"
+      + "And you half and double your numbers...\n"
+      + "So, you half " +numberOne + " and you'll double " + numberTwo
+    );
   numberOneList.add(numberOne);
   numberTwoList.add(numberTwo);
   while(numberOneCalc > 1){
@@ -52,14 +52,14 @@ class Main {
     numberTwoList.add(numberTwoCalc);
     count++; 
   }
-  System.out.println("First, we half our first number " +numberOne);
+  "First, we half our first number " +numberOne);
   System.out.println("And if we get a fraction, we get rid of those, we round down. For example, 11 divided by 2 is 5.5, but we would keep 5.");
   System.out.println("So, we get: ");
   for (int i = 0; i < numberOneList.size(); i++) {
             System.out.println("and " +numberOneList.get(i));
         } 
   System.out.println("And we double our second number as many times as needed to half our first number, in this case: " +count);
-  for (int i = 0; i < numberTwoList.size(); i++) {
+  for (int i = 0; i < numberTwoList.size(System.out.println(); i++) {
             System.out.println("and " +numberTwoList.get(i));
         } 
   System.out.println(" ");
