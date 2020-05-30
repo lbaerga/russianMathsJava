@@ -3,21 +3,23 @@ import java.lang.*;
 import java.util.*; 
 import java.util.Scanner;
 
+
 class Main {
+  boolean isValid = true;
   // gets and validates a user's input as an int
   public static int getValidNumber() {
     Scanner textScanner = new Scanner(System.in);
     System.out.print("Enter a number: ");
     String input = textScanner.nextLine();
-    while (true){
+    while (isValid == true){
       if (input.matches("-?\\d+")) {
         // input is composed of only digits, so it is safe to parse
         int number = Integer.parseInt(input);
         System.out.println("You entered a number " + number);
         return number;
       }
-
       //prompts for invalid data, requests input//
+      isValid = false;
       System.out.println("Sorry, couldn't understand you!");
     }
   }
@@ -31,7 +33,8 @@ class Main {
     int sum = 0;
     ArrayList<Integer> numberOneList = new ArrayList<Integer>();
     ArrayList<Integer> numberTwoList = new ArrayList<Integer>();
-    //calls method for each number, sets it to variable, sets second variable for calculating//
+    //calls method for each number, sets it to variable, sets secondj
+     variable for calculating//
     numberOne = getValidNumber();
     numberOneCalc = numberOne;
     numberTwo = getValidNumber();
